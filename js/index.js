@@ -1,62 +1,35 @@
 import { ImageCardListe } from "./ImageCardList.js";
+import { Panier } from "./Panier.js";
 
+const conteneurPanier = document.querySelector(".panier");
 const conteneur = document.querySelector(".articles");
+const logo = document.querySelector(".logo");
 
-const quantiteImage = {};
+const imageCardList = new ImageCardListe();
+const panier = new Panier(imageCardList.CardListes);
 
-let imageCardList = new ImageCardListe().render()
-conteneur.innerHTML += imageCardList;
+conteneur.innerHTML += imageCardList.render();
+conteneurPanier.innerHTML = panier.render();
+
+logo.addEventListener("click", () => {
+    conteneurPanier.classList.toggle("cache");
+});
+
+function miseAJour(id) {
+    document.getElementById(`qte-${id}`).textContent = panier.quantite(id);
+    conteneurPanier.innerHTML = panier.render();
+}
 
 conteneur.addEventListener("click", (e) => {
     if (e.target.classList.contains("ajouter")) {
         const id = e.target.dataset.ajouter;
-
-        quantiteImage[id] = (quantiteImage[id] || 0) + 1;
-
-        document.getElementById(`qte-${id}`).textContent = quantiteImage[id];
-        // console.log("quantite actuel :", quantiteImage);
+        panier.ajouter(id);
+        miseAJour(id);
     }
 
     if (e.target.classList.contains("retirer")) {
         const id = e.target.dataset.retirer;
-
-        if (quantiteImage[id] && quantiteImage[id] > 0) {
-            quantiteImage[id]--;
-
-            document.getElementById(`qte-${id}`).textContent = quantiteImage[id];
-
-            // console.log("quantite  actuel :", quantiteImage);
-        }
+        panier.retirer(id);
+        miseAJour(id);
     }
 });
-
-// const p = document.querySelector(".panier");
-
-// class ArticleAjouter {
-//     constructor(id,nom,url,prix){
-//         this.id = id;
-//         this.nom = nom;
-//         this.url = url;
-//         this.prix = prix;
-//     }
-
-//     render() {
-
-//         return `
-//                 <article>
-//                     <img src="${this.url}" alt="image" width="200px" height="200px">
-//                     <span>${this.nom}</span>
-//                     <span>${this.prix} CFA</span>
-
-//                 </article>
-//             `;
-//     }
-// }
-
-// class Panier {
-//     render(){
-      
-//     }
-// }
-
-// p.innerHTML+= new ArticleAjouter()
