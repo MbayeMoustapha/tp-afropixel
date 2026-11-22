@@ -1,4 +1,4 @@
-import { ImageCardListe } from "./js/ImageCardList.js";
+import { ImageCardListe } from "./ImageCardList.js";
 
 const conteneur = document.querySelector(".articles");
 
