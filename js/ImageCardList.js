@@ -9,6 +9,9 @@ export class ImageCardListe {
                 new ImageCard(p.id, p.nom, p.url, p.prix, p.categorie),
             );
         }
+
+        // this.CardListes = pictures.map(p => new ImageCard(p.id, p.nom, p.url, p.prix, p.categorie))
+
     }
 
     render() {
