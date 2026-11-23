@@ -37,7 +37,7 @@ export class Panier {
                 <article>
                     <img src="${p.url}" alt="${p.nom}" width="60px" height="60px">
                     <span>${p.nom}</span>
-                    <span>${this.quantite(p.id)} × ${p.prix} CFA</span>
+                    <span>${this.quantite(p.id)} x ${p.prix} CFA</span>
                     <span>${this.quantite(p.id) * p.prix} CFA</span>
                 </article>`,
             )
