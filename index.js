@@ -28,7 +28,7 @@ class ImageCard {
 }
 
 class ImageCardListe {
-    constructor() {}
+    constructor(){}
 
     render() {
         let CardListe = pictures
