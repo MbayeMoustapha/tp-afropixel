@@ -1,8 +1,7 @@
-import pictures from "../pictures.json" with { type: "json" };
 import { ImageCard } from "./ImageCard.js";
 
 export class ImageCardListe {
-    constructor() {
+    constructor(pictures) {
         this.CardListes = [];
         for (const p of pictures) {
             this.CardListes.push(

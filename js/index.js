@@ -1,11 +1,13 @@
 import { ImageCardListe } from "./ImageCardList.js";
 import { Panier } from "./Panier.js";
+import pictures from "../pictures.json" with { type: "json" };
+
 
 const conteneurPanier = document.querySelector(".panier");
 const conteneur = document.querySelector(".articles");
 const logo = document.querySelector(".logo");
 
-const imageCardList = new ImageCardListe();
+const imageCardList = new ImageCardListe(pictures);
 const panier = new Panier(imageCardList.CardListes);
 
 conteneur.innerHTML += imageCardList.render();
