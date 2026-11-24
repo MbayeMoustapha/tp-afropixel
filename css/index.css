@@ -66,7 +66,9 @@ article > img {
 
 }
 
-.cache { display: none; }
+.cache {
+    display: none; 
+}
 
 .logo {
     cursor: pointer;
