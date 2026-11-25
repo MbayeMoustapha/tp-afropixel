@@ -6,6 +6,17 @@ export class ImageCard {
         this.url = url;
         this.prix = prix;
         this.categorie = categorie;
+        this.quantites = 0;
+    }
+    ajouter() {
+        this.quantites++
+    }
+
+    retirer() {
+        if (this.quantites > 0) this.quantites--
+    }
+    quantite() {
+        return this.quantites || 0
     }
 
     render() {

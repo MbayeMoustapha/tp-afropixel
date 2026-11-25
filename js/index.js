@@ -18,20 +18,20 @@ logo.addEventListener("click", () => {
 });
 
 function miseAJour(id) {
-    document.getElementById(`qte-${id}`).textContent = panier.quantite(id);
+    document.getElementById(`qte-${id}`).textContent = imageCardList.trouverId(id).quantite(id);
     conteneurPanier.innerHTML = panier.render();
 }
 
 conteneur.addEventListener("click", (e) => {
     if (e.target.classList.contains("ajouter")) {
         const id = e.target.dataset.ajouter;
-        panier.ajouter(id);
+        imageCardList.trouverId(id).ajouter();
         miseAJour(id);
     }
 
     if (e.target.classList.contains("retirer")) {
         const id = e.target.dataset.retirer;
-        panier.retirer(id);
+        imageCardList.trouverId(id).retirer();
         miseAJour(id);
     }
 });

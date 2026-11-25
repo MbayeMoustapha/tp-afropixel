@@ -12,6 +12,14 @@ export class ImageCardListe {
         // this.CardListes = pictures.map(p => new ImageCard(p.id, p.nom, p.url, p.prix, p.categorie))
 
     }
+trouverId(id) {
+    for (const p of this.CardListes) {
+        if (String(p.id) === String(id))
+        return p
+        
+    }
+
+}
 
     render() {
         let rendu = "";
