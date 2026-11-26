@@ -1,6 +1,6 @@
 
 export class ImageCard {
-    constructor(id, nom, url, prix, categorie) {
+    constructor({id, nom, url, prix, categorie}) {
         this.id = id;
         this.nom = nom;
         this.url = url;

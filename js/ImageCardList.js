@@ -5,7 +5,7 @@ export class ImageCardListe {
         this.CardListes = [];
         for (const p of pictures) {
             this.CardListes.push(
-                new ImageCard(p.id, p.nom, p.url, p.prix, p.categorie),
+                new ImageCard(p),
             );
         }
 
